@@ -4,8 +4,14 @@
 
   <div v-else>
     <h1>Who's that Pokémon?</h1>
-    <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon" />
-    <PokemonOptions :pokemons="pokemonArr"/>
+    <PokemonPicture 
+      :pokemonId="pokemon.id" 
+      :showPokemon="showPokemon" 
+    />
+    <PokemonOptions 
+      :pokemons="pokemonArr"
+      @selection="checkAnswer"
+    />
   </div>
 
 </template>
@@ -38,6 +44,10 @@ export default {
 
       const rndInt = Math.floor( Math.random() * 4 )
       this.pokemon = this.pokemonArr[ rndInt ]
+    },
+
+    checkAnswer( pokemonId ) {
+      this.showPokemon = this.pokemon.id === pokemonId
     }
   },
 
