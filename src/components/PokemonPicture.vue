@@ -2,14 +2,15 @@
 
   <div class="div pokemon-container">
     <img 
+      v-if="!showPokemon"
       class="hidden-pokemon"
       :src="imgSrc" 
-      alt="Pokemon">
+      alt="pokemon">
 
-    <img v-if="showPokemon"
+    <img v-else
       class="fade-in" 
       :src="imgSrc" 
-      alt="Pokemon">
+      alt="pokemon">
     </div>
 
   
@@ -47,10 +48,6 @@ export default {
 /* user-select -> Avoid dragging the image to show the original image without brightness 0 */
 img {
     height: 200px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

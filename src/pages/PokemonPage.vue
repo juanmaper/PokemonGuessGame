@@ -1,6 +1,9 @@
 <template>
 
-  <h1 v-if="!pokemon">Waiting...</h1>
+  <template v-if="!pokemon">
+    <h1 >Waiting...</h1>
+    <img src="@/assets/pokeball.png" alt="pokeball" width="200" height="200">
+  </template>
 
   <div v-else>
     <h1>Who's that Pokémon?</h1>
@@ -13,12 +16,14 @@
       @selection="checkAnswer"
     />
 
-    <template v-if="showAnswer">
-    <h2>{{ message }}</h2>
-        <button @click="newGame">
-          New game
-        </button>
-    </template>
+    <div v-if="showAnswer" class="bottom">
+      <h2>{{ message }}</h2>
+      <button @click="newGame">
+        New game
+      </button>
+    </div>
+
+    <img class="bottom" src="@/assets/pokeballRolling.gif" alt="pokeball" width="100" height="100">
     
 
   </div>
@@ -85,3 +90,12 @@ export default {
   
 }
 </script>
+
+<style scoped>
+
+.bottom {
+  margin-left: 40px;
+}
+
+
+</style>
