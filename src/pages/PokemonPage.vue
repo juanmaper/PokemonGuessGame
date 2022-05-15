@@ -16,14 +16,14 @@
       @selection="checkAnswer"
     />
 
-    <div v-if="showAnswer" class="bottom">
-      <h2>{{ message }}</h2>
+    <div v-if="showAnswer" class="bottomElement ">
+      <h2 class="fade-in">{{ message }}</h2>
       <button @click="newGame">
         New game
       </button>
     </div>
 
-    <img class="bottom" src="@/assets/pokeballRolling.gif" alt="pokeball" width="100" height="100">
+    <img class="bottomElement" src="@/assets/pokeballRolling.gif" alt="pokeball" width="100" height="100">
     
 
   </div>
@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 
-.bottom {
+.bottomElement {
   margin-left: 40px;
 }
 
