@@ -35,6 +35,7 @@ export default {
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${ this.pokemonId }.svg`
     }
   }
+  
 }
 </script>
 
