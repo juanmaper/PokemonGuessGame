@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonPage component should match the snapshot 1`] = `
+<h1>Waiting...</h1>
+<!-- <img src="@/assets/pokeball.png" alt="pokeball" width="200" height="200"> -->
+`;

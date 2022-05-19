@@ -20,10 +20,10 @@ const getPokemonOptions =  async() => {
 export const getPokemonNames = async( [a, b, c, d] = [] ) => {
 
   const promiseArr = [
-    await pokemonApi.get(`/${ a }`), 
-    await pokemonApi.get(`/${ b }`), 
-    await pokemonApi.get(`/${ c }`), 
-    await pokemonApi.get(`/${ d }`)
+    pokemonApi.get(`/${ a }`), 
+    pokemonApi.get(`/${ b }`), 
+    pokemonApi.get(`/${ c }`), 
+    pokemonApi.get(`/${ d }`)
   ]
 
   const [ p1, p2, p3, p4 ] = await Promise.all( promiseArr )

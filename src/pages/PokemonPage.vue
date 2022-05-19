@@ -2,7 +2,7 @@
 
   <template v-if="!pokemon">
     <h1 >Waiting...</h1>
-    <img src="@/assets/pokeball.png" alt="pokeball" width="200" height="200">
+    <!-- <img src="@/assets/pokeball.png" alt="pokeball" width="200" height="200"> -->
   </template>
 
   <div v-else>
@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <img class="bottomElement" src="@/assets/pokeballRolling.gif" alt="pokeball" width="100" height="100">
+    <!-- <img class="bottomElement" src="@/assets/pokeballRolling.gif" alt="pokeball" width="100" height="100"> -->
     
 
   </div>
