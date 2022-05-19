@@ -63,7 +63,30 @@ describe('PokemonPage component', () => {
 
     expect( pokemonPicture.props('pokemonId') ).toBe(5)
     expect( pokemonOptions.props('pokemons') ).toBeTruthy()
+  })
 
+  test('checkAnswer tests', async() => {
+    
+    const wrapper = shallowMount( PokemonPage, {
+      data() {
+        return {
+          pokemonArr: pokemonsMock,
+          pokemon: pokemonsMock[0],
+          showPokemon: false,
+          showAnswer: false,
+          message: ''
+        }
+      }
+    })
+
+    await wrapper.vm.checkAnswer(5)
+
+    expect( wrapper.find('h2').exists() ).toBeTruthy()
+    expect( wrapper.vm.showPokemon ).toBeTruthy()
+    expect( wrapper.find('h2').text() ).toBe(`Correct, ${ pokemonsMock[0].name }`)
+
+    await wrapper.vm.checkAnswer(10)
+    expect( wrapper.vm.message ).toBe(`Oops, it was ${ pokemonsMock[0].name }`)
   })
 
 
