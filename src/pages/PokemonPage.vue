@@ -13,7 +13,7 @@
     />
     <PokemonOptions 
       :pokemons="pokemonArr"
-      @selection="checkAnswer"
+      @pokemonSelection="checkAnswer"
     />
 
     <div v-if="showAnswer" class="bottomElement ">

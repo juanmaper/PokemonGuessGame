@@ -3,7 +3,7 @@
     <ul>
       <li v-for="pokemon in pokemons" 
           :key="pokemon.id"
-          @click="$emit( 'selection', pokemon.id )">
+          @click="$emit( 'pokemonSelection', pokemon.id )">
         {{ capitalize(pokemon.name) }}
       </li>
     </ul>
