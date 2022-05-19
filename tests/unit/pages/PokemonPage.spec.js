@@ -1,5 +1,7 @@
 import { shallowMount, mount } from "@vue/test-utils"
 import PokemonPage from "@/pages/PokemonPage"
+import PokemonPicture from "@/components/PokemonPicture"
+import PokemonOptions from "@/components/PokemonOptions"
 import { pokemonsMock } from "../mocks/pokemons.mock"
 
 describe('PokemonPage component', () => {
@@ -37,6 +39,31 @@ describe('PokemonPage component', () => {
     })
 
     expect( wrapper.html() ).toMatchSnapshot()
+  })
+
+  test('should show PokemonPicture and PokemonOptions components', () => {
+    
+    const wrapper = shallowMount( PokemonPage, {
+      data() {
+        return {
+          pokemonArr: pokemonsMock,
+          pokemon: pokemonsMock[0],
+          showPokemon: false,
+          showAnswer: false,
+          message: ''
+        }
+      }
+    })
+    
+    const pokemonPicture = wrapper.findComponent( PokemonPicture )
+    const pokemonOptions = wrapper.findComponent( PokemonOptions )
+
+    expect( pokemonPicture.exists() ).toBeTruthy()
+    expect( pokemonOptions.exists() ).toBeTruthy()
+
+    expect( pokemonPicture.props('pokemonId') ).toBe(5)
+    expect( pokemonOptions.props('pokemons') ).toBeTruthy()
+
   })
 
 
